@@ -1,3 +1,20 @@
+import { levelServices } from "../services/level-services"
+import { physics } from "./physics"
+
+// class Asset{
+//     constructor(width, height, filePath) {
+//         this.isLoaded = false
+//         const img = new Image(width, height)
+//         // img.onload = () => {
+//         //     this.isLoaded = true
+//         // }
+//         img.src = filePath
+
+//         this.img = img
+//     }
+
+// }
+
 class Sprite {
     constructor({ position, imgSrc, width, height, borderY = 1, borderWidth = 1, isWall = false, isActive = true, scale = 1, frameMax = 1 }) {
         this.img = new Image(width, height);
@@ -49,12 +66,12 @@ class Sprite {
                 this.currentFrame = 0
             }
         }
-    } 
+    }
 }
 
 class Character {
     constructor({ position, velocity, width, height, scale = 1, frameMax = 1 }) {
-        this.img = new Image(width, height)
+        this.img = new Image(width, height);
         this.position = position
         this.velocity = velocity
         this.height = height
@@ -84,7 +101,7 @@ class Character {
                 scale: 1,
                 frameMax: 21
             }),
-            left:  new Sprite({
+            left: new Sprite({
                 position: this.position,
                 width: 2016,
                 height: 96,
@@ -99,54 +116,55 @@ class Character {
         }
         this.isAttacking = false
 
-        this
-        this.sprites.idle.right.src = './img/Background/kangorooright.png'
-        this.sprites.idle.left.src = './img/Background/kangorooleft.png'
+
+        this.sprites.idle.right.src = '/kangorooright.png'
+        this.sprites.idle.left.src = '/kangorooleft.png'
         this.currentSprite = this.sprites.idle.right
 
         this.colliderBox = {
             position: this.position,
             width: 32,
             height: this.height
-        },
+        }
 
-            this.chargeBar = {
-                position: this.colliderBox.position,
-                width: 53,
-                height: 10,
-                tick: {
-                    width: 3.7,
-                    height: 8
-                }
-            },
+        this.chargeBar = {
+            position: this.colliderBox.position,
+            width: 53,
+            height: 10,
+            tick: {
+                width: 3.7,
+                height: 8
+            }
+        }
 
-            this.force = 0;
-        this.lastJump = Date.now(),
-            this.jumpGauge = 0,
-            this.isJumping = true,
-            this.canJump = false
+        this.force = 0
+        this.lastJump = Date.now()
+        this.jumpGauge = 0
+        this.isJumping = true
+        this.canJump = false
         this.isShovedX = false
         this.isShovedY = false
     }
     update() {
-        applyVelocity(this)
-        checkBorderBounce(this)
+        physics.applyVelocity(this)
+        physics.checkBorderBounce(this)
         /*check collision for walls and headbutt*/
+        const currentScene = levelServices.getScene()
         currentScene.platforms.forEach(platform => {
             if (platform.collider.isWall) {
-                checkWallHeadbutt(this, platform)
+                physics.checkWallHeadbutt(this, platform)
             }
         })
         //check wall collision and bounce off thier x
         currentScene.platforms.forEach(platform => {
             if (platform.collider.isWall) {
-                checkWallCollide(this, platform)
+                physics.checkWallCollide(this, platform)
             }
         })
         //detect floor collision and apply gravity
-        applyGravity(this)
-        handleJumpInput(this)
-        checkPlatformCollision(this)
+        physics.applyGravity(this)
+        physics.handleJumpInput(this)
+        physics.checkPlatformCollision(this)
     }
 }
 
@@ -164,6 +182,7 @@ class Scene {
         this.players = players
     }
 }
+
 
 export const classes = {
     Sprite,

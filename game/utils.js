@@ -1,6 +1,7 @@
 export const utils = {
   getRandomInt,
-  debounce
+  debounce,
+  // loadImage
 }
 
 function getRandomInt(min, max) {
@@ -14,3 +15,11 @@ function getRandomInt(min, max) {
       timer = setTimeout(() => { func.apply(this, args); }, timeout);
     };
   }
+
+  // async function loadImage(url, img) {
+  //   return new Promise((resolve, reject) => {
+  //     img.onload = () => resolve(img);
+  //     img.onerror = reject;
+  //     img.src = url;
+  //   });
+  // }

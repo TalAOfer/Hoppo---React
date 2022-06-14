@@ -10,7 +10,7 @@ const level1 = new classes.Level({
         },
         width: 480,
         height: 1440,
-        imgSrc: './img/Background/bigBGforHoppo.png',
+        imgSrc: '/bigBGforHoppo.png',
         borderY: 1,
         borderWidth: 1,
         isWall: false,
@@ -23,7 +23,7 @@ const level1 = new classes.Level({
         },
         width: 100,
         height: 42,
-        imgSrc: './img/Background/platform1.png',
+        imgSrc: '/platform1.png',
         borderY: 1,
         borderWidth: 1
     }), new classes.Sprite({
@@ -33,7 +33,7 @@ const level1 = new classes.Level({
         },
         width: 205,
         height: 53,
-        imgSrc: './img/Background/sideplatform.png',
+        imgSrc: '/sideplatform.png',
         borderY: 1,
         borderWidth: 1
     }), new classes.Sprite({
@@ -43,7 +43,7 @@ const level1 = new classes.Level({
         },
         width: 105,
         height: 53,
-        imgSrc: './img/Background/groundsmall.png',
+        imgSrc: '/groundsmall.png',
         borderY: 1,
         borderWidth: 1
     }), new classes.Sprite({
@@ -53,7 +53,7 @@ const level1 = new classes.Level({
         },
         width: 105,
         height: 53,
-        imgSrc: './img/Background/groundsmall.png',
+        imgSrc: '/groundsmall.png',
         borderY: 1,
         borderWidth: 1
     }), new classes.Sprite({
@@ -63,7 +63,7 @@ const level1 = new classes.Level({
         },
         width: 480,
         height: 47,
-        imgSrc: './img/Background/scene1ground.png',
+        imgSrc: '/scene1ground.png',
         borderY: 1,
         borderWidth: 1
     }),new classes.Sprite({
@@ -73,7 +73,7 @@ const level1 = new classes.Level({
         },
         width: 105,
         height: 53,
-        imgSrc: './img/Background/groundsmall.png',
+        imgSrc: '/groundsmall.png',
         borderY: 1,
         borderWidth: 1
     }), new classes.Sprite({
@@ -83,7 +83,7 @@ const level1 = new classes.Level({
         },
         width: 105,
         height: 53,
-        imgSrc: './img/Background/groundsmall.png',
+        imgSrc: '/groundsmall.png',
         borderY: 1,
         borderWidth: 1
     }), new classes.Sprite({
@@ -93,7 +93,7 @@ const level1 = new classes.Level({
         },
         width: 105,
         height: 53,
-        imgSrc: './img/Background/groundsmall.png',
+        imgSrc: '/groundsmall.png',
         borderY: 1,
         borderWidth: 1
     }), new classes.Sprite({
@@ -103,7 +103,7 @@ const level1 = new classes.Level({
         },
         width: 100,
         height: 42,
-        imgSrc: './img/Background/platform1.png',
+        imgSrc: '/platform1.png',
         borderY: 1,
         borderWidth: 1
     }),new classes.Sprite({
@@ -113,7 +113,7 @@ const level1 = new classes.Level({
         },
         width: 30,
         height: 171,
-        imgSrc: './img/Background/highwallnormal.png',
+        imgSrc: '/highwallnormal.png',
         borderY : 1,
         borderWidth: 1,
         isWall: true })]
@@ -127,7 +127,7 @@ const level2 = new classes.Level({
         },
         width: 480,
         height: 720,
-        imgSrc: './img/Background/bgreal-scene2new.png',
+        imgSrc: '/bgreal-scene2new.png',
         borderY: 1,
         borderWidth: 1,
         isWall: false,
@@ -140,7 +140,7 @@ const level2 = new classes.Level({
         },
         width: 105,
         height: 53,
-        imgSrc: './img/Background/groundsmall.png',
+        imgSrc: '/groundsmall.png',
         borderY: 1,
         borderWidth: 1
     }), new classes.Sprite({
@@ -150,7 +150,7 @@ const level2 = new classes.Level({
         },
         width: 105,
         height: 53,
-        imgSrc: './img/Background/groundsmall.png',
+        imgSrc: '/groundsmall.png',
         borderY: 1,
         borderWidth: 1
     }), new classes.Sprite({
@@ -160,7 +160,7 @@ const level2 = new classes.Level({
         },
         width: 105,
         height: 53,
-        imgSrc: './img/Background/groundsmall.png',
+        imgSrc: '/groundsmall.png',
         borderY: 1,
         borderWidth: 1
     }), new classes.Sprite({
@@ -170,7 +170,7 @@ const level2 = new classes.Level({
         },
         width: 100,
         height: 42,
-        imgSrc: './img/Background/platform1.png',
+        imgSrc: '/platform1.png',
         borderY: 1,
         borderWidth: 1
     }),new classes.Sprite({
@@ -180,7 +180,7 @@ const level2 = new classes.Level({
         },
         width: 30,
         height: 171,
-        imgSrc: './img/Background/highwallnormal.png',
+        imgSrc: '/highwallnormal.png',
         borderY : 1,
         borderWidth: 1,
         isWall: true
@@ -195,7 +195,7 @@ const level3 = new classes.Level({
         },
         width: 480,
         height: 720,
-        imgSrc: './img/Background/bgreal-scene3.png',
+        imgSrc: '/bgreal-scene3.png',
         borderY: 1,
         borderWidth: 1,
         isWall: false,
@@ -208,7 +208,7 @@ const level3 = new classes.Level({
         },
         width: 48,
         height: 55,
-        imgSrc: './img/Background/platform2redt.png',
+        imgSrc: '/platform2redt.png',
         borderY : 1,
         borderWidth : 1
     }),new classes.Sprite({
@@ -218,7 +218,7 @@ const level3 = new classes.Level({
         },
         width: 48,
         height: 55,
-        imgSrc: './img/Background/platform2redt.png',
+        imgSrc: '/platform2redt.png',
         borderY: 1,
         borderWidth: 1
     }), new classes.Sprite({
@@ -228,7 +228,7 @@ const level3 = new classes.Level({
         },
         width: 48,
         height: 55,
-        imgSrc: './img/Background/platform2redt.png',
+        imgSrc: '/platform2redt.png',
         borderY: 1,
         borderWidth: 1
     }),new classes.Sprite({
@@ -238,7 +238,7 @@ const level3 = new classes.Level({
         },
         width: 74,
         height: 37,
-        imgSrc: './img/Background/newcloud.png',
+        imgSrc: '/newcloud.png',
         borderY : 160,
         borderWidth: 1
     }),new classes.Sprite({
@@ -248,7 +248,7 @@ const level3 = new classes.Level({
         },
         width: 30,
         height: 171,
-        imgSrc: './img/Background/highwall.png',
+        imgSrc: '/highwall.png',
         borderY : 1,
         borderWidth: 1,
         isWall: true
@@ -259,7 +259,7 @@ const level3 = new classes.Level({
         },
         width: 30,
         height: 171,
-        imgSrc: './img/Background/highwall.png',
+        imgSrc: '/highwall.png',
         borderY : 1,
         borderWidth: 1,
         isWall: true
@@ -280,7 +280,7 @@ const backgroundScene4 = new classes.Sprite({
     },
     width: 480,
     height: 720,
-    imgSrc: './img/Background/bgreal-scene4.png'
+    imgSrc: '/bgreal-scene4.png'
 })
 
 const platformsScene4 = [new classes.Sprite({
@@ -290,7 +290,7 @@ const platformsScene4 = [new classes.Sprite({
     },
     width: 74,
     height: 37,
-    imgSrc: './img/Background/newcloud.png',
+    imgSrc: '/newcloud.png',
     borderY : 625,
     borderWidth : 1
 }), new classes.Sprite({
@@ -300,7 +300,7 @@ const platformsScene4 = [new classes.Sprite({
     },
     width: 45,
     height: 32,
-    imgSrc: './img/Background/cloudsmall.png',
+    imgSrc: '/cloudsmall.png',
     borderY : 560,
     borderWidth: 1
 }), new classes.Sprite({
@@ -310,7 +310,7 @@ const platformsScene4 = [new classes.Sprite({
     },
     width: 45,
     height: 32,
-    imgSrc: './img/Background/cloudsmall.png',
+    imgSrc: '/cloudsmall.png',
     borderY : 310,
     borderWidth: 1
 }), new classes.Sprite({
@@ -320,7 +320,7 @@ const platformsScene4 = [new classes.Sprite({
     },
     width: 74,
     height: 37,
-    imgSrc: './img/Background/newcloud.png',
+    imgSrc: '/newcloud.png',
     borderY : 110,
     borderWidth: 1
 }),new classes.Sprite({
@@ -330,7 +330,7 @@ const platformsScene4 = [new classes.Sprite({
     },
     width: 30,
     height: 294,
-    imgSrc: './img/Background/highwallscene52.png',
+    imgSrc: '/highwallscene52.png',
     borderY : 1,
     borderWidth: 1,
     isWall: true
@@ -341,7 +341,7 @@ const platformsScene4 = [new classes.Sprite({
     },
     width: 30,
     height: 294,
-    imgSrc: './img/Background/highwallscene52.png',
+    imgSrc: '/highwallscene52.png',
     borderY : 1,
     borderWidth: 1,
     isWall: true
@@ -354,7 +354,7 @@ const backgroundScene5 = new classes.Sprite({
     },
     width: 480,
     height: 720,
-    imgSrc: './img/Background/bgreal-scene5.png'
+    imgSrc: '/bgreal-scene5.png'
 })
 
 const platformsScene5 = [new classes.Sprite({
@@ -364,7 +364,7 @@ const platformsScene5 = [new classes.Sprite({
     },
     width: 48,
     height: 48,
-    imgSrc: './img/Background/platformscene52.png',
+    imgSrc: '/platformscene52.png',
     borderY : 1,
     borderWidth : 1
 }), new classes.Sprite({
@@ -374,7 +374,7 @@ const platformsScene5 = [new classes.Sprite({
     },
     width: 38,
     height: 45,
-    imgSrc: './img/Background/platformscene523.png',
+    imgSrc: '/platformscene523.png',
     borderY : 1,
     borderWidth: 1
 }), new classes.Sprite({
@@ -384,7 +384,7 @@ const platformsScene5 = [new classes.Sprite({
     },
     width: 38,
     height: 45,
-    imgSrc: './img/Background/platformscene523.png',
+    imgSrc: '/platformscene523.png',
     borderY : 1,
     borderWidth: 1
 }), new classes.Sprite({
@@ -394,7 +394,7 @@ const platformsScene5 = [new classes.Sprite({
     },
     width: 38,
     height: 45,
-    imgSrc: './img/Background/platformscene523.png',
+    imgSrc: '/platformscene523.png',
     borderY : 1,
     borderWidth: 1
 }), new classes.Sprite({
@@ -404,7 +404,7 @@ const platformsScene5 = [new classes.Sprite({
     },
     width: 258,
     height: 55,
-    imgSrc: './img/Background/platformscene5groundwall.png',
+    imgSrc: '/platformscene5groundwall.png',
     borderY : 1,
     borderWidth: 1,
     isWall: true
@@ -415,7 +415,7 @@ const platformsScene5 = [new classes.Sprite({
     },
     width: 30,
     height: 224,
-    imgSrc: './img/Background/highwallscene5.png',
+    imgSrc: '/highwallscene5.png',
     borderY : 1,
     borderWidth: 1,
     isWall: true
@@ -426,7 +426,7 @@ const platformsScene5 = [new classes.Sprite({
     },
     width: 30,
     height: 294,
-    imgSrc: './img/Background/highwallscene52.png',
+    imgSrc: '/highwallscene52.png',
     borderY : 1,
     borderWidth: 1,
     isWall: true
@@ -439,7 +439,7 @@ const backgroundScene6 = new classes.Sprite({
     },
     width: 480,
     height: 720,
-    imgSrc: './img/Background/bgreal-scene6.png'
+    imgSrc: '/bgreal-scene6.png'
 })
 
 const platformsScene6 = [new classes.Sprite({
@@ -449,7 +449,7 @@ const platformsScene6 = [new classes.Sprite({
     },
     width: 48,
     height: 48,
-    imgSrc: './img/Background/scene6rock1png.png',
+    imgSrc: '/scene6rock1png.png',
     borderY : 1,
     borderWidth : 1
 }), new classes.Sprite({
@@ -459,7 +459,7 @@ const platformsScene6 = [new classes.Sprite({
     },
     width: 48,
     height: 48,
-    imgSrc: './img/Background/scene6rock1png.png',
+    imgSrc: '/scene6rock1png.png',
     borderY : 1,
     borderWidth : 1
 }), new classes.Sprite({
@@ -469,7 +469,7 @@ const platformsScene6 = [new classes.Sprite({
     },
     width: 48,
     height: 48,
-    imgSrc: './img/Background/scene6rock1png.png',
+    imgSrc: '/scene6rock1png.png',
     borderY : 1,
     borderWidth : 1
 }), new classes.Sprite({
@@ -479,7 +479,7 @@ const platformsScene6 = [new classes.Sprite({
     },
     width: 48,
     height: 48,
-    imgSrc: './img/Background/scene6rock1png.png',
+    imgSrc: '/scene6rock1png.png',
     borderY : 1,
     borderWidth : 1
 })]

@@ -1,9 +1,15 @@
+import { Canvas } from "../cmp/canvas"
 
-const render = {
-    renderGame
+export const renderServices = {
+    renderGame,
+    blender
 }
 
-function renderGame(scene) {
+function blender() {
+    // console.log(Canvas)
+}
+
+function renderGame(scene, c) {
     //console.log(scene)
     const background = scene.background
     const platforms = scene.platforms
@@ -66,21 +72,22 @@ function renderGame(scene) {
         // c.fillRect(getColliderDirection() , player.colliderBox.position.y , player.colliderBox.width ,player.colliderBox.height )
 
 
-        if (keyPressed[87] && !player.isJumping) {
+        // if (keyPressed[87] && !player.isJumping) {
 
-            c.fillStyle = '#433732'
-            c.fillRect(player.currentSprite === player.sprites.idle.right ? player.position.x : player.position.x - 10,
-                player.chargeBar.position.y - 20,
-                player.chargeBar.width,
-                player.chargeBar.height)
+        //     c.fillStyle = '#433732'
+        //     c.fillRect(player.currentSprite === player.sprites.idle.right ? player.position.x : player.position.x - 10,
+        //         player.chargeBar.position.y - 20,
+        //         player.chargeBar.width,
+        //         player.chargeBar.height)
 
-            c.fillStyle = '#EAA141'
-            c.fillRect((player.currentSprite === player.sprites.idle.right ? player.position.x : player.position.x - 10) + 1,
-                player.chargeBar.position.y - 19,
-                player.chargeBar.tick.width,
-                player.chargeBar.tick.height)
+        //     c.fillStyle = '#EAA141'
+        //     c.fillRect((player.currentSprite === player.sprites.idle.right ? player.position.x : player.position.x - 10) + 1,
+        //         player.chargeBar.position.y - 19,
+        //         player.chargeBar.tick.width,
+        //         player.chargeBar.tick.height)
 
-            player.chargeBar.tick.width += 0.9
-        }
+        //     player.chargeBar.tick.width += 0.9
+        // }
     })
 }
+

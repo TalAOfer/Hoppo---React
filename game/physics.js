@@ -1,3 +1,17 @@
+import { CANVAS } from "./constants";
+import { audioServices } from "../services/audio-services";
+import { levelServices } from "../services/level-services";
+
+export const physics = {
+    applyVelocity,
+    applyGravity,
+    getColliderDirection,
+    checkBorderBounce,
+    checkPlatformCollision,
+    checkWallCollide,
+    checkWallHeadbutt
+}
+
 let gravity = 0.7;
 
 function applyVelocity(player) {
@@ -22,9 +36,9 @@ function getColliderDirection(player) {
 
 function checkBorderBounce(player) {
     /*check if player touch border side and apply*/
-    if((player.position.x + player.width >= canvas.width - 1 || player.position.x <= canvas.width - canvas.width + 1)
+    if((player.position.x + player.width >= CANVAS.width - 1 || player.position.x <= CANVAS.width - CANVAS.width + 1)
         && !player.isOnPlatform) {
-        playAudioOnce('wallSfx')
+        audioServices.playAudioOnce('wallSfx')
         player.velocity.x *= -1
         switch (player.currentSprite) {
             case player.sprites.idle.right:
@@ -38,15 +52,16 @@ function checkBorderBounce(player) {
         }
     }
     /*prevent player from going off border*/
-    if (player.position.x + player.width + 1 === canvas.width) {
+    if (player.position.x + player.width + 1 === CANVAS.width) {
         player.velocity.x--
-    } else if (player.position.x - 1 <= canvas.width - canvas.width) {
+    } else if (player.position.x - 1 <= CANVAS.width - CANVAS.width) {
         player.velocity.x++
     }
 }
 
 function checkPlatformCollision(player) {
     const playerBottom = player.colliderBox.position.y + player.colliderBox.height
+    const currentScene = levelServices.getScene()
     currentScene.platforms.forEach(platform => {
         const platformTop = platform.collider.position.y
         if (platform.collider.isActive) {
@@ -63,11 +78,11 @@ function checkPlatformCollision(player) {
 
 function _handlePlatformCollision(player) {
     if (player.isOnPlatform === false) {
-        playAudioOnce('landSfx')
+        audioServices.playAudioOnce('landSfx')
     }
     player.isOnPlatform = true;
     player.isJumping = false;
-    keyReleased[87] = false
+    // keyReleased[87] = false
     player.velocity.y = 0;
     player.velocity.x = 0;
 }
@@ -85,7 +100,7 @@ function checkWallHeadbutt(player,platform){
 function _handleWallHeadbutt(player){
     if(player.isShovedY === false && player.isShovedX === true){
         player.velocity.y *= -1
-        playAudioOnce('wallSfx')
+        audioServices.playAudioOnce('wallSfx')
         player.isShovedY = true
         setTimeout(() => player.isShovedY = false, 100)
     }
@@ -103,7 +118,7 @@ function checkWallCollide(player,platform){
 
 function _handleWallCollide(player){
     if(player.isShovedX === false && !player.isOnPlatform){
-        playAudioOnce('wallSfx')
+        audioServices.playAudioOnce('wallSfx')
         player.velocity.x *= -1
         switch(player.currentSprite){
             case player.sprites.idle.right:

@@ -1,3 +1,9 @@
+export const audioServices = {
+    playAudioOnce,
+    playFade,
+    stopFade
+}
+
 const audioHandler = {}
 const music23 = new Audio('./audio/scene23music.wav')
 music23.loop = true
