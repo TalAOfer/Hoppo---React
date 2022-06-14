@@ -83,7 +83,7 @@ export function Canvas({ props }) {
             const currentPlayers = playerServices.getPlayers()
 
             currentPlayers.forEach(player => {
-                renderServices.renderGame(sceneRef.current, cRef.current)
+                renderServices.renderGame(sceneRef.current, cRef.current,keys)
                 renderServices.handleCamera(player, cRef.current)
                 playerController.keyHandlerFunc(player, keys)
                 player.update(keys);
