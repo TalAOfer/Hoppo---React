@@ -1,67 +1,16 @@
-//data for key presses
-const keys = {
-    a: {
-        pressed: false
-    },
-    d: {
-        pressed: false
-    },
-    w: {
-        pressed: false,
-        released: false
-    }
+import { MAX_JUMP_GAUGE } from "./constants";
+import { audioServices } from "../services/audio-services";
+
+export const playerController = {
+    keyHandlerFunc,
+    jump
 }
-let keyPressed = {};
-let keyReleased = {};
-let lastKey;
-let keyUp;
 
-
-//Handle the players input when pressing down a key
-window.addEventListener('keydown', (event) => {
-    if(event.keyCode === 32){
-        keyPressed[event.keyCode || event.which] = true;
-        keyReleased[event.keyCode || event.which] = false;
-    }
-    keyPressed[event.keyCode || event.which] = true;
-})
-
-//Handle the players input when leaving a key
-window.addEventListener('keyup', (event) => {
-    switch(event.keyCode){
-        case 87:
-            keyPressed[event.keyCode || event.which] = false;
-            keyReleased[event.keyCode || event.which] = true;
-            break
-        case 68:
-            setTimeout(()=>{
-                keyPressed[event.keyCode || event.which] = false;
-                keyReleased[event.keyCode || event.which] = true;
-            },100)
-            break
-        case 65:
-            setTimeout(()=>{
-                keyPressed[event.keyCode || event.which] = false;
-                keyReleased[event.keyCode || event.which] = true;
-            },100)
-        case 32:
-            setTimeout(()=>{
-                keyPressed[event.keyCode || event.which] = false;
-                keyReleased[event.keyCode || event.which] = true;
-            },100)
-
-
-    }
-    //keyPressed[event.keyCode || event.which] = false;
-    //keyReleased[event.keyCode || event.which] = true;
-})
-
-function keyHandlerFunc(player){
+function keyHandlerFunc(player, keyPressed, keyReleased, keyUp, lastKey){
     // w press check
     if(keyPressed[87]){
         if(!player.isJumping){
-            keys.w.pressed = true;
-            if(player.jumpGauge < jumpMaxGauge && (player.isGrounded || player.isOnPlatform)){
+            if(player.jumpGauge < MAX_JUMP_GAUGE && (player.isGrounded || player.isOnPlatform)){
                 player.jumpGauge += 40
             }
        }
@@ -102,15 +51,16 @@ function keyHandlerFunc(player){
     if(keyReleased[65]){
         keyUp = 'a'
     }
+    _handleJumpInput(player, keyPressed, keyReleased, keyUp, lastKey)
 }
 
 
-function handleJumpInput(player) {
+function _handleJumpInput(player, keyPressed, keyReleased, keyUp, lastKey) {
     /*Check if jump gauge is at max , and jump if true  */
-    if (player.jumpGauge >= jumpMaxGauge) {
+    if (player.jumpGauge >= MAX_JUMP_GAUGE) {
         player.isJumping = true;
         player.chargeBar.tick.width = 3.7
-        player.jumpGauge = jumpMaxGauge;
+        player.jumpGauge = MAX_JUMP_GAUGE;
         if (keyPressed[65] && lastKey === 'a') {
             jump(player,'left')
         } else if (keyPressed[68] && lastKey === 'd') {
@@ -137,7 +87,7 @@ function handleJumpInput(player) {
 }
 
 function jump(player, direction){
-    playAudioOnce('jumpSfx')
+    audioServices.playAudioOnce('jumpSfx')
     if(direction === 'left'){
         player.currentSprite = player.sprites.idle.left
         player.velocity.x = -4 - (player.jumpGauge / 550)

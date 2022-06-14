@@ -5,16 +5,16 @@ export const audioServices = {
 }
 
 const audioHandler = {}
-const music23 = new Audio('./audio/scene23music.wav')
+const music23 = new Audio('/scene23music.wav')
 music23.loop = true
-const music4 = new Audio('./audio/scene4music.wav')
+const music4 = new Audio('/scene4music.wav')
 music4.loop = true
-const music5 = new Audio('./audio/scene5music.wav')
+const music5 = new Audio('/scene5music.wav')
 music5.loop = true
 
 function playAudioOnce(audio){
     if(!audioHandler[audio]){
-        const newAudio = new Audio(`./audio/${audio}.wav`)
+        const newAudio = new Audio(`./${audio}.wav`)
         audioHandler[audio] = newAudio
     }
 

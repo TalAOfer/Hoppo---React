@@ -163,7 +163,7 @@ class Character {
         })
         //detect floor collision and apply gravity
         physics.applyGravity(this)
-        physics.handleJumpInput(this)
+        // physics.handleJumpInput(this)
         physics.checkPlatformCollision(this)
     }
 }

@@ -2,11 +2,21 @@ import { Canvas } from "../cmp/canvas"
 
 export const renderServices = {
     renderGame,
-    blender
+    handleCamera
 }
 
-function blender() {
-    // console.log(Canvas)
+function handleCamera(player, c){
+    let scroll = 0
+    if(player.position.y < 360 && player.position.y > -461){
+        scroll = player.velocity.y / 1.2
+        c.translate(0,(-scroll))
+    }else if(player.position.y > 360){
+        c.setTransform(1, 0, 0, 1, 0, 0);
+    } else if(player.position.y < -461){
+        c.save();
+        c.restore()
+    }
+    c.save();
 }
 
 function renderGame(scene, c) {
