@@ -1,3 +1,8 @@
+export const utils = {
+  getRandomInt,
+  debounce
+}
+
 function getRandomInt(min, max) {
     return Math.random() * (max - min) + min;
   }

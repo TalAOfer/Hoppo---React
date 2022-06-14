@@ -1,7 +1,9 @@
+import { classes } from "./classes"
 
-const level1 = new Level({
+
+const level1 = new classes.Level({
     //Instance of background
-    background : new Sprite({
+    background : new classes.Sprite({
         position: {
             x: 0,
             y: -720
@@ -14,7 +16,7 @@ const level1 = new Level({
         isWall: false,
         isActive: false })
     //Instances of platforms with colliders in mid
-    ,platforms : [new Sprite({
+    ,platforms : [new classes.Sprite({
         position: {
             x: 300,
             y: 400
@@ -24,7 +26,7 @@ const level1 = new Level({
         imgSrc: './img/Background/platform1.png',
         borderY: 1,
         borderWidth: 1
-    }), new Sprite({
+    }), new classes.Sprite({
         position: {
             x: 0,
             y: 280
@@ -34,7 +36,7 @@ const level1 = new Level({
         imgSrc: './img/Background/sideplatform.png',
         borderY: 1,
         borderWidth: 1
-    }), new Sprite({
+    }), new classes.Sprite({
         position: {
             x: 200,
             y: 100
@@ -44,7 +46,7 @@ const level1 = new Level({
         imgSrc: './img/Background/groundsmall.png',
         borderY: 1,
         borderWidth: 1
-    }), new Sprite({
+    }), new classes.Sprite({
         position: {
             x: 190,
             y: 600
@@ -54,9 +56,9 @@ const level1 = new Level({
         imgSrc: './img/Background/groundsmall.png',
         borderY: 1,
         borderWidth: 1
-    }), new Sprite({
+    }), new classes.Sprite({
         position: {
-            x: 00,
+            x: 0,
             y: 700
         },
         width: 480,
@@ -64,7 +66,7 @@ const level1 = new Level({
         imgSrc: './img/Background/scene1ground.png',
         borderY: 1,
         borderWidth: 1
-    }),new Sprite({
+    }),new classes.Sprite({
         position: {
             x: 165,
             y: 530 - 720
@@ -74,7 +76,7 @@ const level1 = new Level({
         imgSrc: './img/Background/groundsmall.png',
         borderY: 1,
         borderWidth: 1
-    }), new Sprite({
+    }), new classes.Sprite({
         position: {
             x: 185,
             y: 100 - 720
@@ -84,7 +86,7 @@ const level1 = new Level({
         imgSrc: './img/Background/groundsmall.png',
         borderY: 1,
         borderWidth: 1
-    }), new Sprite({
+    }), new classes.Sprite({
         position: {
             x: 290,
             y: 330 - 720
@@ -94,7 +96,7 @@ const level1 = new Level({
         imgSrc: './img/Background/groundsmall.png',
         borderY: 1,
         borderWidth: 1
-    }), new Sprite({
+    }), new classes.Sprite({
         position: {
             x: 0,
             y: 220 - 720
@@ -104,7 +106,7 @@ const level1 = new Level({
         imgSrc: './img/Background/platform1.png',
         borderY: 1,
         borderWidth: 1
-    }),new Sprite({
+    }),new classes.Sprite({
         position: {
             x: 280,
             y: -30 - 720
@@ -117,8 +119,8 @@ const level1 = new Level({
         isWall: true })]
 })
 
-const level2 = new Level({
-    background : new Sprite({
+const level2 = new classes.Level({
+    background : new classes.Sprite({
         position: {
             x: 0,
             y: 0
@@ -131,7 +133,7 @@ const level2 = new Level({
         isWall: false,
         isActive: false
     }),
-    platforms: [ new Sprite({
+    platforms: [ new classes.Sprite({
         position: {
             x: 165,
             y: 530
@@ -141,7 +143,7 @@ const level2 = new Level({
         imgSrc: './img/Background/groundsmall.png',
         borderY: 1,
         borderWidth: 1
-    }), new Sprite({
+    }), new classes.Sprite({
         position: {
             x: 185,
             y: 100
@@ -151,7 +153,7 @@ const level2 = new Level({
         imgSrc: './img/Background/groundsmall.png',
         borderY: 1,
         borderWidth: 1
-    }), new Sprite({
+    }), new classes.Sprite({
         position: {
             x: 290,
             y: 330
@@ -161,7 +163,7 @@ const level2 = new Level({
         imgSrc: './img/Background/groundsmall.png',
         borderY: 1,
         borderWidth: 1
-    }), new Sprite({
+    }), new classes.Sprite({
         position: {
             x: 0,
             y: 220
@@ -171,7 +173,7 @@ const level2 = new Level({
         imgSrc: './img/Background/platform1.png',
         borderY: 1,
         borderWidth: 1
-    }),new Sprite({
+    }),new classes.Sprite({
         position: {
             x: 280,
             y: -30
@@ -185,8 +187,8 @@ const level2 = new Level({
     })]
 })
 
-const level3 = new Level({
-    background : new Sprite({
+const level3 = new classes.Level({
+    background : new classes.Sprite({
         position: {
             x: 0,
             y: 0
@@ -199,7 +201,7 @@ const level3 = new Level({
         isWall: false,
         isActive: false
     }),
-     platforms : [new Sprite({
+     platforms : [new classes.Sprite({
         position: {
             x: 110,
             y: 400
@@ -209,7 +211,7 @@ const level3 = new Level({
         imgSrc: './img/Background/platform2redt.png',
         borderY : 1,
         borderWidth : 1
-    }),new Sprite({
+    }),new classes.Sprite({
         position: {
             x: 385,
             y: 630
@@ -219,7 +221,7 @@ const level3 = new Level({
         imgSrc: './img/Background/platform2redt.png',
         borderY: 1,
         borderWidth: 1
-    }), new Sprite({
+    }), new classes.Sprite({
         position: {
             x: 30,
             y: 90
@@ -229,7 +231,7 @@ const level3 = new Level({
         imgSrc: './img/Background/platform2redt.png',
         borderY: 1,
         borderWidth: 1
-    }),new Sprite({
+    }),new classes.Sprite({
         position: {
             x: 250,
             y: 150
@@ -239,7 +241,7 @@ const level3 = new Level({
         imgSrc: './img/Background/newcloud.png',
         borderY : 160,
         borderWidth: 1
-    }),new Sprite({
+    }),new classes.Sprite({
         position: {
             x: 305,
             y: 270
@@ -250,7 +252,7 @@ const level3 = new Level({
         borderY : 1,
         borderWidth: 1,
         isWall: true
-    }),new Sprite({
+    }),new classes.Sprite({
         position: {
             x: 280,
             y: 638
@@ -264,8 +266,14 @@ const level3 = new Level({
     })]
 })
 
+export const levelData = {
+    level1,
+    level2,
+    level3
+}
+
 /*
-const backgroundScene4 = new Sprite({
+const backgroundScene4 = new classes.Sprite({
     position: {
         x: 0,
         y: 0
@@ -275,7 +283,7 @@ const backgroundScene4 = new Sprite({
     imgSrc: './img/Background/bgreal-scene4.png'
 })
 
-const platformsScene4 = [new Sprite({
+const platformsScene4 = [new classes.Sprite({
     position: {
         x: 30,
         y: 610
@@ -285,7 +293,7 @@ const platformsScene4 = [new Sprite({
     imgSrc: './img/Background/newcloud.png',
     borderY : 625,
     borderWidth : 1
-}), new Sprite({
+}), new classes.Sprite({
     position: {
         x: 220,
         y: 550
@@ -295,7 +303,7 @@ const platformsScene4 = [new Sprite({
     imgSrc: './img/Background/cloudsmall.png',
     borderY : 560,
     borderWidth: 1
-}), new Sprite({
+}), new classes.Sprite({
     position: {
         x: 100,
         y: 300
@@ -305,7 +313,7 @@ const platformsScene4 = [new Sprite({
     imgSrc: './img/Background/cloudsmall.png',
     borderY : 310,
     borderWidth: 1
-}), new Sprite({
+}), new classes.Sprite({
     position: {
         x: 230,
         y: 100
@@ -315,7 +323,7 @@ const platformsScene4 = [new Sprite({
     imgSrc: './img/Background/newcloud.png',
     borderY : 110,
     borderWidth: 1
-}),new Sprite({
+}),new classes.Sprite({
     position: {
         x: 345,
         y: -10
@@ -326,7 +334,7 @@ const platformsScene4 = [new Sprite({
     borderY : 1,
     borderWidth: 1,
     isWall: true
-}),new Sprite({
+}),new classes.Sprite({
     position: {
         x: 345,
         y: 480
@@ -339,7 +347,7 @@ const platformsScene4 = [new Sprite({
     isWall: true
 })]
 
-const backgroundScene5 = new Sprite({
+const backgroundScene5 = new classes.Sprite({
     position: {
         x: 0,
         y: 0
@@ -349,7 +357,7 @@ const backgroundScene5 = new Sprite({
     imgSrc: './img/Background/bgreal-scene5.png'
 })
 
-const platformsScene5 = [new Sprite({
+const platformsScene5 = [new classes.Sprite({
     position: {
         x: 250,
         y: 600
@@ -359,7 +367,7 @@ const platformsScene5 = [new Sprite({
     imgSrc: './img/Background/platformscene52.png',
     borderY : 1,
     borderWidth : 1
-}), new Sprite({
+}), new classes.Sprite({
     position: {
         x: 350,
         y: 400
@@ -369,7 +377,7 @@ const platformsScene5 = [new Sprite({
     imgSrc: './img/Background/platformscene523.png',
     borderY : 1,
     borderWidth: 1
-}), new Sprite({
+}), new classes.Sprite({
     position: {
         x: 350,
         y: 300
@@ -379,7 +387,7 @@ const platformsScene5 = [new Sprite({
     imgSrc: './img/Background/platformscene523.png',
     borderY : 1,
     borderWidth: 1
-}), new Sprite({
+}), new classes.Sprite({
     position: {
         x: 80,
         y: 210
@@ -389,7 +397,7 @@ const platformsScene5 = [new Sprite({
     imgSrc: './img/Background/platformscene523.png',
     borderY : 1,
     borderWidth: 1
-}), new Sprite({
+}), new classes.Sprite({
     position: {
         x: 230,
         y: 80
@@ -400,7 +408,7 @@ const platformsScene5 = [new Sprite({
     borderY : 1,
     borderWidth: 1,
     isWall: true
-}),new Sprite({
+}),new classes.Sprite({
     position: {
         x: 230,
         y: 250
@@ -411,7 +419,7 @@ const platformsScene5 = [new Sprite({
     borderY : 1,
     borderWidth: 1,
     isWall: true
-}),new Sprite({
+}),new classes.Sprite({
     position: {
         x: 345,
         y: 700
@@ -424,7 +432,7 @@ const platformsScene5 = [new Sprite({
     isWall: true
 })]
 
-const backgroundScene6 = new Sprite({
+const backgroundScene6 = new classes.Sprite({
     position: {
         x: 0,
         y: 0
@@ -434,7 +442,7 @@ const backgroundScene6 = new Sprite({
     imgSrc: './img/Background/bgreal-scene6.png'
 })
 
-const platformsScene6 = [new Sprite({
+const platformsScene6 = [new classes.Sprite({
     position: {
         x: 60,
         y: 550
@@ -444,7 +452,7 @@ const platformsScene6 = [new Sprite({
     imgSrc: './img/Background/scene6rock1png.png',
     borderY : 1,
     borderWidth : 1
-}), new Sprite({
+}), new classes.Sprite({
     position: {
         x: 350,
         y: 400
@@ -454,7 +462,7 @@ const platformsScene6 = [new Sprite({
     imgSrc: './img/Background/scene6rock1png.png',
     borderY : 1,
     borderWidth : 1
-}), new Sprite({
+}), new classes.Sprite({
     position: {
         x: 100,
         y: 300
@@ -464,7 +472,7 @@ const platformsScene6 = [new Sprite({
     imgSrc: './img/Background/scene6rock1png.png',
     borderY : 1,
     borderWidth : 1
-}), new Sprite({
+}), new classes.Sprite({
     position: {
         x: 230,
         y: 100

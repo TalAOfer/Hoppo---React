@@ -20,28 +20,8 @@ const scene3 = new Scene(level3,players);
 //defaulting current scene to scene 1
 let currentScene = scene1;
 
-const fps = 90
 //Handling the global updating , gets called every frame
-function animate(){
-    //calls animate function every window frame
-    setTimeout(() => {
-        window.requestAnimationFrame(animate)
-        currentPlayers = getPlayers();
-        //update current scene
-        currentPlayers.forEach(player => {
-            handleCamera(player)
-            renderGame(currentScene)
-            //update the player 
 
-            keyHandlerFunc(player)
-            player.update();
-            //sceneHandler();
-            
-        })
- 
-    }
-    ,1000/fps)
-}
 
 animate();
 
