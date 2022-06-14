@@ -12,10 +12,12 @@ export function Canvas({ props }) {
     const canvasRef = useRef(null)
     const cRef = useRef(null)
     const sceneRef = useRef(null)
-    let keyPressed = {};
-    let keyReleased = {};
-    let lastKey;
-    let keyUp;
+    const keys = {
+        keyPressed: {},
+        keyReleased: {},
+        lastKey: null,
+        keyUp: null
+    }
 
     useEffect(() => {
         const canvas = canvasRef.current
@@ -36,40 +38,40 @@ export function Canvas({ props }) {
     const addEventListeners = () => {
         //Handle the players input when pressing down a key
         document.addEventListener('keydown', (event) => {
-            if(event.keyCode === 32){
-                keyPressed[event.keyCode || event.which] = true;
-                keyReleased[event.keyCode || event.which] = false;
+            if (event.keyCode === 32) {
+                keys.keyPressed[event.keyCode || event.which] = true;
+                keys.keyReleased[event.keyCode || event.which] = false;
             }
-            keyPressed[event.keyCode || event.which] = true;
+            keys.keyPressed[event.keyCode || event.which] = true;
         })
 
         window.addEventListener('keyup', (event) => {
-            switch(event.keyCode){
+            switch (event.keyCode) {
                 case 87:
-                    keyPressed[event.keyCode || event.which] = false;
-                    keyReleased[event.keyCode || event.which] = true;
+                    keys.keyPressed[event.keyCode || event.which] = false;
+                    keys.keyReleased[event.keyCode || event.which] = true;
                     break
                 case 68:
-                    setTimeout(()=>{
-                        keyPressed[event.keyCode || event.which] = false;
-                        keyReleased[event.keyCode || event.which] = true;
-                    },100)
+                    setTimeout(() => {
+                        keys.keyPressed[event.keyCode || event.which] = false;
+                        keys.keyReleased[event.keyCode || event.which] = true;
+                    }, 100)
                     break
                 case 65:
-                    setTimeout(()=>{
-                        keyPressed[event.keyCode || event.which] = false;
-                        keyReleased[event.keyCode || event.which] = true;
-                    },100)
+                    setTimeout(() => {
+                        keys.keyPressed[event.keyCode || event.which] = false;
+                        keys.keyReleased[event.keyCode || event.which] = true;
+                    }, 100)
                 case 32:
-                    setTimeout(()=>{
-                        keyPressed[event.keyCode || event.which] = false;
-                        keyReleased[event.keyCode || event.which] = true;
-                    },100)
-        
-        
+                    setTimeout(() => {
+                        keys.keyPressed[event.keyCode || event.which] = false;
+                        keys.keyReleased[event.keyCode || event.which] = true;
+                    }, 100)
+
+
             }
-            //keyPressed[event.keyCode || event.which] = false;
-            //keyReleased[event.keyCode || event.which] = true;
+            //keys.keyPressed[event.keyCode || event.which] = false;
+            //keys.keyReleased[event.keyCode || event.which] = true;
         })
     }
 
@@ -83,8 +85,8 @@ export function Canvas({ props }) {
             currentPlayers.forEach(player => {
                 renderServices.renderGame(sceneRef.current, cRef.current)
                 renderServices.handleCamera(player, cRef.current)
-                playerController.keyHandlerFunc(player, keyPressed, keyReleased, keyUp, lastKey)
-                player.update();
+                playerController.keyHandlerFunc(player, keys)
+                player.update(keys);
 
             })
         }, 1000 / FPS)

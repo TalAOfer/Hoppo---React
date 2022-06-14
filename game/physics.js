@@ -59,7 +59,7 @@ function checkBorderBounce(player) {
     }
 }
 
-function checkPlatformCollision(player) {
+function checkPlatformCollision(player, keys) {
     const playerBottom = player.colliderBox.position.y + player.colliderBox.height
     const currentScene = levelServices.getScene()
     currentScene.platforms.forEach(platform => {
@@ -69,20 +69,20 @@ function checkPlatformCollision(player) {
                 && playerBottom + player.velocity.y >= platformTop
                 && getColliderDirection(player) + player.colliderBox.width >= platform.collider.position.x - 1
                 && getColliderDirection(player) <= platform.collider.position.x + platform.collider.width - 1) {
-                   _handlePlatformCollision(player)
+                   _handlePlatformCollision(player, keys)
  
             }
         }
     })
 }
 
-function _handlePlatformCollision(player) {
+function _handlePlatformCollision(player, keys) {
     if (player.isOnPlatform === false) {
         audioServices.playAudioOnce('landSfx')
     }
     player.isOnPlatform = true;
     player.isJumping = false;
-    // keyReleased[87] = false
+    keys.keyReleased[87] = false
     player.velocity.y = 0;
     player.velocity.x = 0;
 }

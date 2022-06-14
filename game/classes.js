@@ -1,5 +1,6 @@
 import { levelServices } from "../services/level-services"
 import { physics } from "./physics"
+import { playerController } from "./player-controller";
 
 // class Asset{
 //     constructor(width, height, filePath) {
@@ -145,7 +146,7 @@ class Character {
         this.isShovedX = false
         this.isShovedY = false
     }
-    update() {
+    update(keys) {
         physics.applyVelocity(this)
         physics.checkBorderBounce(this)
         /*check collision for walls and headbutt*/
@@ -163,8 +164,8 @@ class Character {
         })
         //detect floor collision and apply gravity
         physics.applyGravity(this)
-        // physics.handleJumpInput(this)
-        physics.checkPlatformCollision(this)
+        playerController.handleJumpInput(this, keys)
+        physics.checkPlatformCollision(this, keys)
     }
 }
 

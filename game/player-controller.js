@@ -3,12 +3,13 @@ import { audioServices } from "../services/audio-services";
 
 export const playerController = {
     keyHandlerFunc,
-    jump
+    jump,
+    handleJumpInput
 }
 
-function keyHandlerFunc(player, keyPressed, keyReleased, keyUp, lastKey){
+function keyHandlerFunc(player, keys){
     // w press check
-    if(keyPressed[87]){
+    if(keys.keyPressed[87]){
         if(!player.isJumping){
             if(player.jumpGauge < MAX_JUMP_GAUGE && (player.isGrounded || player.isOnPlatform)){
                 player.jumpGauge += 40
@@ -19,63 +20,62 @@ function keyHandlerFunc(player, keyPressed, keyReleased, keyUp, lastKey){
         //player.jumpGauge = 0
     }
     // w release check
-    if(keyReleased[87]){
+    if(keys.keyReleased[87]){
         player.isJumping = true
     }
-    console.log(player.punch.currentFrame < player.punch.frameMax)
-    if(keyPressed[32]){
-        lastKey = ''
+    // console.log(player.punch.currentFrame < player.punch.frameMax)
+    if(keys.keyPressed[32]){
+        keys.lastKey = ''
         if(player.currentSprite === player.sprites.idle.right)
         player.punch.right.update(player)
         if(player.currentSprite === player.sprites.idle.left)
         player.punch.left.update(player)
     }
-    if(keyReleased[32]){
-        keyUp = 'space'
+    if(keys.keyReleased[32]){
+        keys.keyUp = 'space'
         player.punch.right.currentFrame = 0
         player.punch.left.currentFrame = 0
     }
     // d press check
-    if(keyPressed[68]){
-        lastKey = 'd'
+    if(keys.keyPressed[68]){
+        keys.lastKey = 'd'
     }
     // d release check
-    if(keyReleased[68]){
-        keyUp = 'd'
+    if(keys.keyReleased[68]){
+        keys.keyUp = 'd'
     }
     // a press check
-    if(keyPressed[65]){
-        lastKey = 'a'
+    if(keys.keyPressed[65]){
+        keys.lastKey = 'a'
     }
     // a release check
-    if(keyReleased[65]){
-        keyUp = 'a'
+    if(keys.keyReleased[65]){
+        keys.keyUp = 'a'
     }
-    _handleJumpInput(player, keyPressed, keyReleased, keyUp, lastKey)
 }
 
 
-function _handleJumpInput(player, keyPressed, keyReleased, keyUp, lastKey) {
+function handleJumpInput(player, keys) {
     /*Check if jump gauge is at max , and jump if true  */
     if (player.jumpGauge >= MAX_JUMP_GAUGE) {
         player.isJumping = true;
         player.chargeBar.tick.width = 3.7
         player.jumpGauge = MAX_JUMP_GAUGE;
-        if (keyPressed[65] && lastKey === 'a') {
+        if (keys.keyPressed[65] && keys.lastKey === 'a') {
             jump(player,'left')
-        } else if (keyPressed[68] && lastKey === 'd') {
+        } else if (keys.keyPressed[68] && keys.lastKey === 'd') {
             jump(player,'right')
         } else {
             jump(player,'middle')
         }
         player.jumpGauge = 0
         /*If jump Gauge is not at max , Check if player released W key and jump if true  */
-    } else if (keyReleased[87]) {
+    } else if (keys.keyReleased[87]) {
         if (player.isGrounded || player.isOnPlatform) {
             player.chargeBar.tick.width = 3.7
-            if (keyPressed[65] && lastKey === 'a') {
+            if (keys.keyPressed[65] && keys.lastKey === 'a') {
                 jump(player,'left')
-            } else if (keyPressed[68] && lastKey === 'd') {
+            } else if (keys.keyPressed[68] && keys.lastKey === 'd') {
                 jump(player,'right')
             } else {
                 jump(player,'middle')
