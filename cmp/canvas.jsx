@@ -5,6 +5,7 @@ import { playerController } from '../game/player-controller'
 import { renderServices } from '../game/render'
 import { levelServices } from '../services/level-services'
 import { playerServices } from '../services/player-services'
+import { socketService} from '../services/socket-services'
 
 
 export function Canvas({ props }) {
@@ -20,6 +21,7 @@ export function Canvas({ props }) {
     }
 
     useEffect(() => {
+        socketService.on('connect', console.log('socketing'))
         const canvas = canvasRef.current
         const c = canvas.getContext('2d')
         cRef.current = c
